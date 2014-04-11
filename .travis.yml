@@ -18,8 +18,10 @@ before_install:
     # install build tools
   - conda install --yes conda-build
 
+  # debug
+  - pwd
 
 install:
-  - cd master_builder/recipes/trmm_rsl/
+  - cd recipes/trmm_rsl/
 
 script: conda build .
