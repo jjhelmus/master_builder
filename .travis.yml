@@ -30,5 +30,5 @@ script: conda build .
   
 after_success:
   
-    - binstar register --user master_builder --private /Users/travis/miniconda/conda-bld/osx-64/trmm_rsl-1.44-0.tar.bz2 .
-    - binstar upload --user master_builder /Users/travis/miniconda/conda-bld/osx-64/trmm_rsl-1.44-0.tar.bz2 .
+    - binstar register --user master_builder --private /Users/travis/miniconda/conda-bld/osx-64/trmm_rsl-1.44-0.tar.bz2
+    - binstar upload --user master_builder /Users/travis/miniconda/conda-bld/osx-64/trmm_rsl-1.44-0.tar.bz2
