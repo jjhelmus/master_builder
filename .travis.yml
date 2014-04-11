@@ -17,6 +17,7 @@ before_install:
   
     # install build tools
   - conda install --yes conda-build
+  - conda install --yes jinja2
 
   # debug
   - pwd
@@ -25,3 +26,7 @@ install:
   - cd recipes/trmm_rsl/
 
 script: conda build .
+  
+after_success:
+  
+    - binstar upload --user --private /Users/travis/miniconda/conda-bld/osx-64/trmm_rsl-1.44-0.tar.bz2 .
