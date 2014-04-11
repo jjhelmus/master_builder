@@ -17,6 +17,7 @@ before_install:
   
     # install build tools
   - conda install --yes conda-build
+  - conda install --yes binstar
     #- conda install --yes jinja2
 
   # debug
