@@ -17,7 +17,7 @@ before_install:
   
     # install build tools
   - conda install --yes conda-build
-  - conda install --yes jinja2
+    #- conda install --yes jinja2
 
   # debug
   - pwd
