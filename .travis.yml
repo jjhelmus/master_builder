@@ -1,0 +1,25 @@
+language:
+    - objective-c
+
+before_install:
+  - brew update
+  
+  # Download and install Miniconda
+  - wget http://repo.continuum.io/miniconda/Miniconda-3.3.0-MacOSX-x86_64.sh -O miniconda.sh 
+  - chmod +x miniconda.sh
+  - ./miniconda.sh -b
+  - ls -al /Users/travis
+  - export PATH=/Users/travis/miniconda/bin:$PATH
+  
+  # Update conda
+  - conda update --yes conda
+  - conda update --yes conda
+  
+    # install build tools
+  - conda install --yes conda-build
+
+
+install:
+  - cd master_builder/recipes/trmm_rsl/
+
+script: conda build .
