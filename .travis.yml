@@ -40,4 +40,4 @@ deploy:
     secure: dR9IJRnfHbsU5uSJvHWGBG9mn/kLRIX3W8IIhWYuwORCt3MDcEYrRBUMbqfsABC3Yk/vqFLzZdj05SJc+0MISNSAtZJlhYL4ZbIaIY2KUB2rVfUamxmru+m23XtgW0vEEF5fjTzSgCnXvF3qg4tZ7lHpkOLpM96hS4ktYxbdH1E=
   bucket: masterbuildosx
   skip_cleanup: true
-  local-dir: /Users/travis/miniconda/conda-bld/osx-64/trmm_rsl-1.44-0.tar.bz2
+  local-dir: /Users/travis/miniconda/conda-bld/osx-64/
