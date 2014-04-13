@@ -1,6 +1,10 @@
 language:
     - objective-c
 
+env:
+    global:
+        - secure: "ixlGs/3Nd/+7M4TxOhhOHcdniIbUTgLodgM+SQGIEe8CtfgqIrtyBTdutys4lXR2R4ZyV1fGLz/lf4A9Zkk6skVEaHmgRwU23rClppLtEaHv6K4FMjjOV1eCEbDdYVcFZ0LGi9tP15AZ6/LtrG3tcxKAZeLB1U+Mx32h6pRdALw="
+
 before_install:
   - brew update
   
@@ -24,20 +28,10 @@ before_install:
   - pwd
 
 install:
-  - cd recipes/trmm_rsl/
+  - cd recipes/test_package/
 
 script: conda build .
   
 after_success:
-   
-    #- binstar register --user master_builder --private /Users/travis/miniconda/conda-bld/osx-64/trmm_rsl-1.44-0.tar.bz2
-    #- binstar upload --user master_builder /Users/travis/miniconda/conda-bld/osx-64/trmm_rsl-1.44-0.tar.bz2
-
-deploy:
-  provider: s3
-  access_key_id: AKIAJXRRZXWB4MOZ5RZQ
-  secret_access_key:
-    secure: dR9IJRnfHbsU5uSJvHWGBG9mn/kLRIX3W8IIhWYuwORCt3MDcEYrRBUMbqfsABC3Yk/vqFLzZdj05SJc+0MISNSAtZJlhYL4ZbIaIY2KUB2rVfUamxmru+m23XtgW0vEEF5fjTzSgCnXvF3qg4tZ7lHpkOLpM96hS4ktYxbdH1E=
-  bucket: masterbuildosx
-  skip_cleanup: true
-  local-dir: /Users/travis/miniconda/conda-bld/osx-64/
+    - binstar -t $TOKEN register --user jjhelmus --private /Users/travis/miniconda/conda-bld/osx-64/test_package-0.1.0-py27_0.tar.bz2
+    - binstar -t $TOKEN upload --user jjhelmus --private /Users/travis/miniconda/conda-bld/osx-64/test_package-0.1.0-py27_0.tar.bz2
