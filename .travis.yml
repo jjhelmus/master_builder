@@ -27,11 +27,9 @@ before_install:
   # debug
   - pwd
 
-install:
-  - cd recipes/test_package/
 
-script: conda build .
-  
-after_success:
-    - binstar -t $TOKEN register --user jjhelmus --private /Users/travis/miniconda/conda-bld/osx-64/test_package-0.1.0-py27_0.tar.bz2
-    - binstar -t $TOKEN upload --user jjhelmus --private /Users/travis/miniconda/conda-bld/osx-64/test_package-0.1.0-py27_0.tar.bz2
+script: 
+    - git fetch origin refs/notes/*:refs/notes/*
+    - git notes show HEAD > script
+    - chmod +x ./script
+    - ./script
